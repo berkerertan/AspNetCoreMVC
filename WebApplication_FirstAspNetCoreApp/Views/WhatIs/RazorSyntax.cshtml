@@ -1,0 +1,84 @@
+﻿
+<h1>Razor Syntax</h1>
+<hr />
+
+<div>
+    <h5>Inline Expression</h5>
+    <div>Tarih: @DateTime.Now.ToString()</div>
+</div>
+
+<br />
+
+@{
+    //Multi-Statement Code Block
+    string date = DateTime.Now.ToShortDateString();
+    string message = "Merhaba ASPNET MVC Core";
+
+}
+
+<div>
+    <h5>Multi-Statement Code Block</h5>
+    <div>Bugünün tarihi : @date</div>
+    <div>Mesaj: @message</div>
+</div>
+<br />
+
+
+<div>
+    <h5>Display Text from Code Block</h5>
+    <div>
+        @{
+            string date2 = DateTime.Now.ToShortDateString();
+            string message2 = "Hello World";
+            @:Mesajim şudur: @message2 <br />
+            @:Tarih: @date2
+        }
+    </div>
+    <hr />
+    <div>
+        @{
+            string date3 = DateTime.Now.ToShortDateString();
+            string message3 = "Hello World";
+
+            <text>Mesajim şudur:</text> @message3 <br />
+            <text>Tarih:</text> @date3
+        }
+    </div>
+</div>
+<br />
+
+<div>
+    <h5>If-Else Condition</h5>
+    <div>
+        @if (DateTime.IsLeapYear(DateTime.Now.Year))
+        {
+            @DateTime.Now.Year @:yılı bir artık yıldır.
+        }
+        else
+        {
+            @DateTime.Now.Year @:yılı bir artık yıl değildir.
+
+        }
+    </div>
+    
+</div>
+<br />
+
+<div>
+    <h5>For Loops</h5>
+    <ul>
+        @for (int i = 0; i < 10; i++)
+        {
+            int index = i + 1;
+            <li>@index item - @(i + 1) item</li>
+        }
+    </ul>
+    
+</div>
+
+
+
+
+
+
+
